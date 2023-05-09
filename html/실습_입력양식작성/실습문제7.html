@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습문제7</title>
+</head>
+<body>
+    <form>
+    <h1>주문하기</h1>
+    <hr>
+    <label>고객명 : <input type="text" name="custumername" id="order"required autofocus></label><br>
+    <label>전화번호 : <input type="tel" name='tel' id='order'required autofocus></label><br>
+    <label>E-mail: <input type="email" name='email' id='order'required autofocus></label> <br>
+    <hr>
+    <fieldset>
+        <legend>피자종류</legend>
+    <select>
+        
+        <option value='none'>메뉴선택</option>
+        <option value='cheeze'>치즈크러스트</option>
+        <option value='pepperlony'>페퍼로니</option>
+        <option value='sweetpotato'>고구마</option>
+        <option value='hawaian'>하와이안</option>
+
+    </select>
+
+    </fieldset>
+
+
+    <br>
+    <fieldset>
+        <legend>피자 사이즈</legend>
+        <input type="radio" name="size" id="Small"> 
+        <label for='Small'>Small</label><br> 
+        <!--라벨태그해주면 텍스트에 커서 대면 체크가능하도록 작동-->
+        <input type="radio" name="size" id="Medium" checked> 
+        <label for='Medium'>Medium</label><br> 
+        <input type="radio" name="size" id="Large"> 
+        <label for='Large'>Large</label><br> 
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>토핑 선택</legend>
+        <input type="checkbox" name="topping" id="topping" value='bacon'>베이컨<br>
+        <input type="checkbox" name="topping" id="topping" value='cheeze'>치즈<br>
+        <input type="checkbox" name="topping" id="topping" value='anion'>양파<br>
+        <input type="checkbox" name="topping" id="topping" value='mushroom'>버섯
+    </fieldset>
+    <br>
+    희망 배송 시간 : <input type="time" name="time" id="time">
+    <br>
+    <br>
+    배송 시 요청사항 :<br>
+    <textarea cols='40' rows='15' id='request'></textarea><br>
+    <input type="submit" value="주문하기">
+</form>
+</body>
+</html>

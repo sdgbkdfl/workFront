@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        ul{
+		list-style:none;
+		}
+    </style>
+    <title>폼 관련 태그</title>
+</head>
+<body>
+        <!--  
+        <form> 태그
+            form 태그는 html에서 사용자가 입력할 수 있는 양식을 제공하는 태그이다.
+            form 태그 내의 <input> 태그들을 통해서 사용자가 입력한 정보를 서버로 넘기면서 요청하는 역할을 한다.
+
+
+        * 속성
+            action : 폼 내에 입력된 값들을 전달할 서버에 대한 내용을 기입한다.
+            method : get / post 방식으로 전송 방식을 지정한다.
+                get : 서버에 사용자가 입력한 값들을 URL에 노출시켜서 전달하는 방식
+                post : 서버에 사용자가 입력한 값들을 URL에 노출시키지 않고 전달하는 방식
+            autocomplete : 이전 입력 내용을 출력하는 기능(default : on, 각 태그별로 지정 가능)
+           
+    -->
+    <h1>폼 관련 태그</h1>
+    <h2>폼 태그의 기본 구조</h2>
+    <form action='order.html' method='get' target='_blank'>
+   <!--name :  form태그 안에서 input태그를 구분하는 역할
+        나중에 서버로 값을 전달할때 name속성과 텍스트 필드에 작성된 값이 세트로 넘어감
+        name 속성 = value 값
+
+        search=검색어
+        &요소가 여러개인 경우 &로 연경
+        email=email
+    -->
+
+        검색할 내용 : <input type='text' name='search' size='15' value='검색어' autofocus>
+        <br>
+        이메일 : <input type='text' name='email' size='15' value='email'>
+        <!--
+            submit버튼 :
+            서버에 특정 페이지를 요청
+            클릭하면 form요소의 method요청 전송방식으로 action에 지정한 서버로
+            사용자가 입력한 값(key=value)전달
+        -->
+        <input type='submit' value='검색'>
+    </form>
+     
+
+    <hr>
+    <form>
+        <!--
+            fieldset : 폼 요소를 그룹으로 묶는 태그
+            legend : 묶은 폼 요소에 명칭 부여하는 태그
+        -->
+        <fieldset>
+            <legend>회원정보</legend>
+            <!--
+                label태그 :<input>태그와 같은 폼요소에 에이블을 붙일 때 사용
+                <label for='id'>레이블명<input 'id명'></label>
+            -->
+            <label>아이디  <input type='text'></label><br>
+            <label for=''>비밀번호 <input type='password'></label>
+        </fieldset>
+
+        <fieldset>
+            <legend>배송정보</legend>
+            <label>수령인  <input type="text"></label><br>
+            <label for=''>주소  <input type="text"></label><br>
+        </fieldset>
+        <input type='submit' value='회원가입'>
+
+    </form>
+    <hr>
+    <h2>텍스트와 관련된 input태그</h2>
+    <form>
+        <!--type=text
+        한줄짜리 텍스트를 입력 할 수 있는 텍스트 박스
+        required는 필수 값
+        value :기본 값 부여(비밀번호에는 value값 없음)
+        -->
+    <ul>
+        <li>
+     아이디 :  <input type='text' name='userId' required value='아이디'
+        size='20' maxlength='15' placeholder='아이디를 입력해주세요'>
+        </li>
+   
+        <li>
+
+        비밀번호 :  <input type='password' name='uerPw'required value='비밀번호'
+        size='20' maxlength='15' placeholder='비밀번호를 입력하세요'>
+        </li>
+        <li>
+           <!--email/ search/ url /tel
+            겉모습은 텍스트필드와 비슷하지만
+            각각 정보에 맞게 세분화된 기능 제공하는 텍스트 상자이다--> 
+        <!--타입을 이메일로 부여하면 submit할때 이메일 형식 체크해줌-->
+        이메일 :  <input type="email" name="userEmail" id="userEmail" value='dlgdl@naver.com' placeholder='이메일을 입력해주세요.'>
+        </li>
+        <!--type='url', submit될때 http://, https:// 주소 확인-->
+        <li>홈페이지 : <input type="url" name="haompage" value="https://" placeholder='홈페이지를 입력해주세요.'>
+        </li>
+        <li>
+            <!--검색어 입력 후 오른쪽에 x버튼이 생겨서 검색어 삭제가 쉬움-->
+            검색 : <input type="search" name='searchText' id='searchText' placeholder='검색할 내용을 입력'>
+        </li>
+        <!--datalist 태그
+         텍스트 필드에서 데이터 목록중
+        값을 선택하여 입력
+        *HTML에서 새로 추가된 기능
+        -->
+        <li>
+            색상 : <input type="text" name="color" list="myColor">
+            
+            <datalist id='myColor'>
+                <option value='black'>검정색</option>
+                <option value='white'>흰색</option>
+                <option value='skyblue'>하늘색</option>
+            </datalist>
+
+        </li>
+    </ul>
+            <input type="submit" value="전송">
+            <!-- 폼 안에 입력 요소들을 모두 초기화-->
+            <input type="reset" value="초기화">
+    </form>
+    <form>
+        <hr>
+    <h3>숫자와 관련된 input 태그</h3>
+    <!--type='number'
+    입력창에 숫자를 입력하는 것이 기본이지만
+    브라우저에 따라 스핀 박스가 표시되기로 한다
+    (스핀박스: 입력창 오른쪽 위/아래 화살표 버튼)
+    -->
+        <input type="number" name="amount" id="amount"
+        value='0' min='0' max='100' step='5'> <!--장바구니 수량 제어할때..사용..-->
+    <br> 
+    <!--type = 'range' : 슬라이드바르 통한 숫자지정가능-->
+        <input type="range" name="point" id="point"
+        value='0' max='1000' step='100' min='0'>
+        <br>
+        <input type="submit" value="전송"><br>
+        <input type="reset" value="초기화">
+
+
+    </form>
+    <hr>
+    <h3>날짜/시간 관련 input 태그</h3>
+<form>
+<!--type='date/month/week/time /datetime /datetime_local'-->
+Date : <input type="date" name="date" id="date"> 
+<input type="date" name="date" id="date1" value='2023-05-09'>
+<br>
+Month : <input type="month" name="month" id="month">
+<input type="month" name="month" id="month1" value='2023-05'>
+<br>
+Time : <input type="time" name="time" id="time">
+<input type="time" name="time" id="time1" value='10:45'>
+<br>
+Datetime_local : <input type="datetime-local" name="datetime-local" id="datetime-local">
+<br>
+<!--datetime은 크롬, ie,엣지에서 지원되지 않음 (→ datetime_local로 대체)-->
+Datetime : <input type="datetime" name="datetime" id="datetime">
+<br>
+Week : <input type="week" name="week" id="week">
+
+    <input type="submit" value="전송">
+    <input type="reset" value="초기화">
+</form>
+<hr>
+<h3>라디오버튼과 체크박스</h3>
+<form>
+<!--type='radio'
+여러항목 중 한가지만 선택해야 할 경우 사용
+태그 여러개를 선언하여 하나의 용도로 상ㅇ할 경우
+name 속성의 값이 같아야 함-->
+<fieldset>
+<legend>성별</legend>
+<!--checked : 기본값으로 설정, 다중 선택시 마지막 항목으로 설정됨-->
+<input type="radio" name="gender" id="m" checked>남
+<input type="radio" name="gender" id="f">여
+<!--name을 다르게 주면 중복체크 가능하고 안묶인채로 데이터 넘어감-->
+</fieldset>
+<!--type='checkbox'
+여러항목 중 여러가지 선택해도 가능한 경우 사용
+태그 여러 개를 선언 하여 하나의 용도로 사용 할 경우
+name속성 깉아야함-->
+<fieldset>
+<legend>취미</legend>
+<input type="checkbox" name="hobby" id="hobby" value='baseball'>야구
+<input type="checkbox" name="hobby" id="hobby" value='soccker'>축구
+<input type="checkbox" name="hobby" id="hobby" value='basketball'>농구
+<input type="checkbox" name="hobby" id="hobby" value='swimming'checked>수영
+<input type="checkbox" name="hobby" id="hobby" value='running'>달리기
+
+</fieldset>
+
+<input type="submit" value="전송">
+<input type="reset" value="초기화">
+<br>
+<br>
+<br>
+</form>
+<hr>
+<h3>기타 input 태그</h3>
+<form>
+    <input type="color" name='color' id='color'>
+    <br>
+    파일선택 : <input type="file" name="uploadFile" id="uploadFile">
+    <br>
+    <input type="hidden" name="hiddenValue" value='1'>
+    <br>
+    <input type="button" value="button">
+    <input type="submit" value="submit">
+    <input type="reset" value="reset">
+    <br>
+    <button>전송</button>
+    <button type='submit'><b>전송</b></button>
+    <button type='reset'>초기화</button>
+    <button type='button'>버튼</button>
+    <!--이미지버튼 만들기-->
+    <input type="image" value="img버튼" src='images/login.png' alt='로그인 버튼'>
+</form>
+<hr>
+<h3>select 드롭다운목록</h3>
+<!--select태그와 option태그
+사용자가 내용을 입력하는 것이 아닌
+여러 옵션 중에서 선택하게 하고 싶을때 사용하는 드롭 다운 목록-->
+<form>
+    국적
+    <select> 
+        <optgroup label='asia'>
+        <!--value는 서버로 넘어가는 값-->
+        <option value='ko'>한국</option>
+        <option value='tw'>대만</option>
+        <!--셀렉티드 : 기본값 설정-->
+        <option value='jp' selected>일본</option>
+    </optgroup>
+    <optgroup label='america'>
+        <option value='en'>미국</option>
+    </optgroup>
+    <option value='' label='etc'>etc</option>
+    </select>
+    <br>
+    <br>
+
+    <!--textarea 태그
+    input type='text'와 비슷하지만 여러줄 입력가능-->
+    TextArea : <br>
+    <textarea name='tarea' placeholder='내용입력요망'
+    cols='50' rows='20' style='resize:none;'></textarea>
+    <br>
+    <!--progress태그
+    작업시작을 0으로 하고 최대값에서 얼마나 진행되었는지 그래프로 표현-->
+   progrss :  <progress value='30' max='100'></progress>
+   <br>
+   <!--meter
+    전체 크기 중 얼마나 차지하고 있는지 표현할 때 사용-->
+   meter : <meter min='0' max='100' value='95' low='60' high='90'></meter>
+
+
+</form>
+<p></p>
+<p></p>
+<br>
+<br>
+
+
+</body>
+</html>

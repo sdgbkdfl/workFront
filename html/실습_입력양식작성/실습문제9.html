@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습문제9</title>
+</head>
+<body>
+    <h1>회원가입</h1>
+    <form>
+        <fieldset>
+            <legend>필수 입력 사항</legend>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <td> <label for='userid'><input type="text" name="userid" id="userid" 
+                        placeholder='아이디 10글자 이내' maxlength='10'></label></td>
+                    <td><b><input type="button" value="중복확인"></b></td>    
+                </tr>
+                <tr>
+                    <th>비밀번호</th>
+                    <td> <label for='pw'><input type="password" name="pw" id="pw" 
+                        placeholder='영문, 숫자, 특수문자 포함 8자 이상' minlength='8'></label></td>
+                    <td></td>   
+                </tr>
+                <tr>
+                    <th>비밀번호 확인</th>
+                    <td> <label for='pw'><input type="password" name="pw" id="pw" 
+                        minlength='8'></label></td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td><label for='email'> <input type="email" 
+                        name="email" id="email"></label></td>
+                    <td><select>
+                        <option value='self'>직접입력</option>
+                        <option value='@naver.com'>@naver.com</option>
+                    </select></td>    
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset>
+            <legend>추가 정보</legend>
+            <p>프로필 사진 : <input type="file" name="uploadFile" id="uploadFile"></p>
+            <p>성별 : <label><input type="radio" name="gender" id="w">여자</label></p>
+            <p><label><input type="radio" name="gender" id="m">남자</label></p>
+            <p>생년월일</p>
+
+            
+
+        </fieldset>
+
+
+    </form>
+</body>
+</html>
