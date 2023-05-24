@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid 3-2</title>
+    <style>
+         .wrapper{
+            width: 700px;
+            /* border: 1px solid blue; */
+            display: grid;
+            /* 컬럼갯수와 너비 지정 */
+            grid-template-columns: repeat(3,1fr);
+            /* 행의 갯수와 너비 지정 */
+            grid-template-rows: repeat(3,1fr);
+            grid-template-areas: 
+            "box1 box1 box1"
+            "box2 box3 box3"
+            "box2 . box4";
+        }
+        .box{
+            /* border: 1px dotted dodgerblue; */
+            padding: 15px;
+            color: black;
+            font-weight: bold;
+            text-align: center;
+        }
+        .box1{
+            grid-area: box1;
+            background-color: teal;
+        }
+        .box2{
+            grid-area: box2;
+            background-color: green;
+        }
+        .box3{
+            grid-area: box3;
+            background-color: gainsboro;
+        }
+        .box4{
+            grid-area: box4;
+            background-color: olivedrab;
+        }
+    
+
+    </style>
+</head>
+<body>
+    <h1>그리드 레이아웃3-2🍔</h1>
+    <div class="wrapper">
+        <div class="box box1">box1</div>
+        <div class="box box2">box2</div>
+        <div class="box box3">box3</div>
+        <div class="box box4">box4</div>
+        <div class="box box5">box5</div>
+    </div>
+</body>
+</html>

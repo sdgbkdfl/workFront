@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>항목배치 alighn-content</title>
+    <style>
+          .container{
+            width: 200px;
+            height: 150px;
+            background-color: rgb(255, 171, 185);
+            border: 1px solid black;
+            /* 왼쪽에서 오른쪽 여러줄 표시 */
+            flex-flow: row wrap;
+            margin-bottom: 30px;
+            /* 플렉스 컨테이너 지정..? */
+            display: flex;
+
+        }
+        .box{
+            /* padding: 5px 45px;
+            margin: 5px; */
+            width: 80px;
+            background-color: black;
+            border: 1px dotted rgb(245, 244, 244);
+        }
+        p{
+            color: #fff;
+            text-align: center;
+        }
+        /* 교차축 시작점 기준 */
+        #opt1{
+            align-content: flex-start;
+        }
+        #opt2{
+            align-content: flex-end;
+        }
+        #opt3{
+            align-content: center;
+        }
+        /* 시작점과 끝점 배치후 중간 항목은 같게 */
+        #opt4{
+            align-content: space-between;
+        }
+        /* 전체 항목을 같은 간격 배치 */
+        #opt5{
+            align-content: space-around;
+        }
+        /* 항목 늘려 교차축 가득차게 */
+        #opt6{
+            align-content: stretch;
+        }
+    </style>
+</head>
+<body>
+    <h2>🍟align-content🐣</h2>
+    플렉스 항목이 여러줄로 표시될때 교차축 기준의 배치 방법 지정
+    <!-- (div.container#opt$>(div.box>p{$})*4)*6 -->
+
+    <div class="container" id="opt1">
+        <div class="box">
+            <p>1</p>
+        </div>
+        <div class="box">
+            <p>2</p>
+        </div>
+        <div class="box">
+            <p>3</p>
+        </div>
+        <div class="box">
+            <p>4</p>
+        </div>
+    </div>
+    <div class="container" id="opt2">
+        <div class="box">
+            <p>1</p>
+        </div>
+        <div class="box">
+            <p>2</p>
+        </div>
+        <div class="box">
+            <p>3</p>
+        </div>
+        <div class="box">
+            <p>4</p>
+        </div>
+    </div>
+    <div class="container" id="opt3">
+        <div class="box">
+            <p>1</p>
+        </div>
+        <div class="box">
+            <p>2</p>
+        </div>
+        <div class="box">
+            <p>3</p>
+        </div>
+        <div class="box">
+            <p>4</p>
+        </div>
+    </div>
+    <div class="container" id="opt4">
+        <div class="box">
+            <p>1</p>
+        </div>
+        <div class="box">
+            <p>2</p>
+        </div>
+        <div class="box">
+            <p>3</p>
+        </div>
+        <div class="box">
+            <p>4</p>
+        </div>
+    </div>
+    <div class="container" id="opt5">
+        <div class="box">
+            <p>1</p>
+        </div>
+        <div class="box">
+            <p>2</p>
+        </div>
+        <div class="box">
+            <p>3</p>
+        </div>
+        <div class="box">
+            <p>4</p>
+        </div>
+    </div>
+    <div class="container" id="opt6">
+        <div class="box">
+            <p>1</p>
+        </div>
+        <div class="box">
+            <p>2</p>
+        </div>
+        <div class="box">
+            <p>3</p>
+        </div>
+        <div class="box">
+            <p>4</p>
+        </div>
+    </div>
+</body>
+</html>

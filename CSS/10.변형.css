@@ -1,0 +1,59 @@
+.transTest{
+    width: 250px;
+    height: 200px;
+    /* 위치를 지정하기 위해서 포지션 속성을 설정 */
+    position: relative;
+    left: 50px;
+    /*
+    웹요소의 스타일 속성이 조금씩 자연스럽게 바뀌도록 하는 역할 
+    기본값
+    all : 요소의 모든 속성
+    ease : 처음 천천히 빨라지다가 끝나가면서 천천히 */
+    transition: 1s;
+}
+/* trans1에 마우스 커서를 가져다대면 */
+/* transform : 특정요소의 크기나 형태등 스타일이 바뀌는 것 */
+
+/* 좌우로 움직이기 */
+#trans1:hover{
+    /* 음수는 왼쪽 이동 양수는 오른쪽 이동 */
+    transform: translateX(-50px)
+}
+/*위아래로 움직이기*/
+#trans2:hover{
+    transform: translateY(50px);
+}
+/* 대각선으로 움직이기 */
+#trans3:hover{
+    transform: translate(50px,50px);
+}
+/* 가로로 확대/축소 */
+#trans4:hover{
+    transform: scaleX(2);    
+}
+  /* 세로 확대 /축소 */
+#trans5:hover{ 
+    transform: scaleY(2);
+}
+/* 전체 확대/축소 */
+#trans6:hover{
+    transform: scale(2);
+}
+/* 지정한 각도만큼 회전 */
+#trans7:hover{
+    /* 각도만큼 회전 */
+    /* 양수는 오른쪽 회전 음수는 왼쪽 회전 */
+    transform: rotate(-45deg);
+}
+#trans8:hover{
+    transform: rotate(45deg);    
+} 
+#trans9:hover{
+    /* 중심축을 가운데로 */
+    transform: rotate(45deg);    
+}
+#trans10:hover{
+    /* 중심축을 왼쪽 위로 */
+    transform-origin: left top;
+    transform: rotate(45deg);  
+}

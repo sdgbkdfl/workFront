@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
+.wrap{
+    width: 1000px;
+    height: 700px;
+    /* 큰박스 가운데 정렬 */
+    margin: 0px auto;    
+}
+.wrap header{
+    width: 100%;
+    height: 120px;
+    background-color: antiquewhite;
+}
+header .pageTop{
+    width: 100%;
+    height: 90px;
+    margin-top: 10px;
+    background-color: white;
+}
+header .pageTop #logo{
+    float: left;
+    width: 200px;
+    text-align: center;    
+}
+header .pageTop #title{
+    float: left;
+    width: 800px;
+    
+}
+header nav ul{    
+    padding: 0px;
+}
+header nav ul li{
+    width: 25%;
+    height: 30px;
+    /* border: 1px solid black; */
+    background-color: olivedrab;
+    float: left;
+ 
+}
+header nav ul li a{
+    display: inline-block;
+    text-align: center;
+    /* border: 1px solid salmon; */
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    color: aliceblue;
+
+}
+header nav ul li a:hover{
+    background-color: black;
+}
+main{
+    width: 100%;
+    height: 700px;
+    /* background-color: thistle; */
+    margin-top: 10px;
+}
+#leftSide{
+    width: 200px;
+    height: 100%;
+    /* background-color: turquoise; */
+    float: left;
+}
+#rightSide{
+    width: 250px;
+    height: 100%;
+    float: left;
+    /* background-color: springgreen;     */
+}
+#rightSide .rightBottom img{
+    width: 100%;
+    text-align: right;
+}
+ td{
+    width: 270px;
+} 
+table  img{
+    width: 100%;
+}
+
+#mainContents{
+    width: 550px;
+    height: 100%;
+    background-color: white;
+    text-align: center;
+    float: left;
+}
+ main #mainContents contents{
+    width: 50%;
+
+}
+
+main #leftSide img{
+    width: 100%;
+
+}
+
+*{
+    margin 0;
+    box-sizing: border-box;
+}
+#login_wrap{
+    width: 250px;
+    height: 100px;
+    margin-bottom: 20px;
+    /* border: 1px solid black; */
+    /* background-color: aquamarine; */
+}
+#login_form{
+    height: 80%;
+}
+#login_form_input{
+    width: 65%;
+    /* 픽셀로 지정할 경우 부모 요소와 상관없이 설정되나,
+    %로 높이값 부여할 경우 부모 요소 높이 값 없으면 높이 지정안됨 */
+    height: 100%;
+    background-color: white;
+    float: left;
+}    
+#login_form_input>input{
+    height: 50%;
+    width: 100%;
+}    
+#login_form_btn{
+    width: 35%;
+    height: 100%;
+    /* background-color: yellow; */
+    float: right;
+    /* text-align: right; */
+}
+#login_form_btn> input{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px; /*모서리 둥근선*/
+    background-color: lavender;
+    font-weight: bold;             
+}
+#login_link{
+    text-align: center;
+}
+#login_link a{
+    text-decoration: none;
+    color: black;
+    font-size: small;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{box-sizing: border-box;
+            list-style: none;
+        }
+        /* 라디오박스 체크란 제거 */
+        #tabmenu input[type=radio]{
+            display: none;
+        }
+        #tabmenu label{
+            /* border: 1px solid red; */
+            display: inline-block;
+            padding: 20px;
+            margin: 0;
+            font-weight: 600;
+            color: #888686;
+        }
+        #tabmenu label:hover{
+            color: black;
+        }
+        /* 라디오 버튼이 체크된 상태 */
+        #tabmenu input:checked + label{
+            border: 1px solid #ccc;
+            background-color: #eee;
+            color: pink;
+        }
+        .tabcontent{
+            display: none;
+            border-top: 1px solid #ccc;
+            padding: 10px 30px;
+            position: absolute;
+            left: 0;
+            top: 63px;
+            width: 100%;       
+        }
+        #tabNotic:checked ~ #notice,
+        #tabGallery:checked ~ #gallery{
+            display: block;
+        }
+        #contents{
+            width: 500px;
+        }
+        #tabmenu{
+            width: 100%;
+            position: relative;
+        }
+        #gallery ul li{
+            display: inline;
+        }
+        #gallery ul li img{
+            width: 200px;
+        }
+        #notice ul{
+            border: 1px solid red;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <div id='contents'>
+        <div id='tabmenu'>           
+            <input type="radio" name="tabs" id="tabNotic" checked>
+            <label for="tabNotic">공지사항</label>
+            <!-- 라벨이 선택(checked)되면 id를 통해 요소가 연결되어 체크됨 -->
+            <input type="radio" name="tabs" id="tabGallery">
+            <label for="tabGallery">갤러리</label>
+
+            <article id='notice' class='tabcontent'>
+                <ul>
+                    <li>주문안내</li>
+                    <li>배송안내</li>
+                    <li>반품 및 환불</li>
+                    <li>1:1 문의</li>
+                    <li>공지</li>
+                </ul>
+            </article>
+            
+            <article id='gallery' class='tabcontent'>
+                <ul>
+                    <li><img src="images/cup-1.jpg" alt=""> </li>
+                    <li><img src="images/cup-2.jpg" alt=""> </li>
+                    <li> <img src="images/cup-3.jpg" alt=""></li>
+                    <li> <img src="images/cup-4.jpg" alt=""></li>
+           
+                </ul>
+            </article>
+
+        </div>
+    </div>
+</body>
+</html>

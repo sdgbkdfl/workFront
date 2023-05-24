@@ -1,0 +1,88 @@
+#actionTest, #hoverTest{
+    width: 100px;
+    height: 100px;
+    background-color: yellowgreen;
+    border: 1px solid black;
+}
+/* 사용자가 요소를 클릭하면 색상 변경 */
+#actionTest:active{
+    background-color: aqua;
+}
+#hoverTest:hover{
+    background-color: violet;
+}
+/* checkbox가 checked이면 상태 변경 */
+input[type=checkbox]:checked{
+    width: 20px;
+    height: 20;
+}
+input[type=checkbox]:checked+label{
+    font-size: 1.5em;
+}
+#userId:focus, #userPwd:focus{
+    background-color: cornflowerblue;
+}
+option:enabled{
+    background-color: pink;
+}
+/* 사용 불가 상태 */
+option:disabled{
+    background-color: silver;
+}
+button:disabled{
+    background-color: darkgrey;
+}
+/* 형제 관계중 첫번째 요소를 선택 */
+#test2 p:first-child{
+    background-color: red;
+    color: rgb(179, 241, 241);
+}
+/* 형제 관계 중 마지막 요소 선택 */
+/* 마지막 자식이 p태그가 아니므로 스타일이 지정되지 않는다 */
+#test2 p:last-child{
+    background-color: orange;
+    color: aliceblue;
+}
+#test2 p:nth-child(2){
+    background-color: turquoise;
+    color: brown;
+}
+/* even 짝수, odd 홀수 대입 가능 */
+/* #test2 p:nth-child(even){
+    background-color: burlywood;
+    color: brown;
+} */
+#test2 p:nth-child(2n){
+    background-color: burlywood;
+    color: brown;
+}
+/* 뒤에서 몇번째인지 선택 */
+#test2 p:nth-last-child(4){
+    background-color: steelblue;
+}
+/* 형제구조선택자 */
+#test3 p:first-of-type{
+    background-color: chocolate;
+    color: skyblue;
+}
+#test3 p:last-of-type{
+    background-color: blueviolet;
+    color: aliceblue;
+}
+#test3 p:nth-of-type(2n){
+    background-color: chartreuse;
+    color: blanchedalmond;
+}
+#test3 p:nth-of-type(3){
+    background-color: palegoldenrod;
+    color: red;
+}
+
+/* 부정 선택자 */
+#test4 p:not(:nth-child(even)){
+    background-color: coral;
+}
+/* p요소 중에서 */
+#test4 p:not(:nth-of-type(even)){
+    color: aqua;
+}

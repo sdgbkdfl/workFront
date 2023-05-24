@@ -7,52 +7,67 @@
     <title>실습문제9</title>
 </head>
 <body>
-    <h1>회원가입</h1>
-    <form>
+    <h1>회원가입😝</h1>
+    <form><!--서버로 전송위함-->
         <fieldset>
-            <legend>필수 입력 사항</legend>
+            <legend><b>🍦필수 입력 사항🍦</b></legend>
             <table>
                 <tr>
-                    <th>ID</th>
-                    <td> <label for='userid'><input type="text" name="userid" id="userid" 
-                        placeholder='아이디 10글자 이내' maxlength='10'></label></td>
+                    <th><label for='userid'>ID</label></th> <!--for 값은 연결해줄 요소의 id값-->
+                    <td> <input type="text" name="userid" id="userid" 
+                        placeholder='아이디 10글자 이내' maxlength='10'></td>
                     <td><b><input type="button" value="중복확인"></b></td>    
                 </tr>
                 <tr>
-                    <th>비밀번호</th>
-                    <td> <label for='pw'><input type="password" name="pw" id="pw" 
-                        placeholder='영문, 숫자, 특수문자 포함 8자 이상' minlength='8'></label></td>
+                    <th><label for='pw'>비밀번호</label></th>
+                    <td> <input type="password" name="pw" id="pw" 
+                        placeholder='영문, 숫자, 특수문자 포함 8자 이상' minlength='8'></td>
                     <td></td>   
                 </tr>
                 <tr>
-                    <th>비밀번호 확인</th>
-                    <td> <label for='pw'><input type="password" name="pw" id="pw" 
-                        minlength='8'></label></td>
+                    <th><label for='pwCk'>비밀번호 확인</label></th>
+                    <td> <input type="password" name="pwCk" id="pwCk" 
+                        minlength='8'></td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <th>Email</th>
-                    <td><label for='email'> <input type="email" 
-                        name="email" id="email"></label></td>
-                    <td><select>
+                    <th><label for='email'>Email</label></th>
+                    <td> <input type="email" 
+                        name="email" id="email"></td>
+                    <td><select name='emailAddr' id='emailAddr'>
                         <option value='self'>직접입력</option>
                         <option value='@naver.com'>@naver.com</option>
+                        <option value='@daum.net'>@daum.net</option>
+                        <option value='@google.com'>@gmail.com</option>
                     </select></td>    
                 </tr>
             </table>
         </fieldset>
-
+        <br>
         <fieldset>
-            <legend>추가 정보</legend>
+            <legend><b>🥨추가 정보🥨</b></legend>
+            <!--목록(ul)으로 각 요소 묶어주면 제어 easy-->
             <p>프로필 사진 : <input type="file" name="uploadFile" id="uploadFile"></p>
-            <p>성별 : <label><input type="radio" name="gender" id="w">여자</label></p>
-            <p><label><input type="radio" name="gender" id="m">남자</label></p>
-            <p>생년월일</p>
+            <p>성별 : <label><input type="radio" name="gender" id="f" checked>여자</label>
+            <label><input type="radio" name="gender" id="m">남자</label></p>
+            <p><label for='birth'> 생년월일 : <input type="date" name="birth" id="birth"></label></p>
+            <p>취미 : <br>
+                <label for= 'bas'><input type="checkbox" name="hobby" id="bas" value='baseball'>야구</label>
+                <label for= 'bask'><input type="checkbox" name="hobby" id="bask" value='basketball'>농구</label>
+                <label for= 'socc'><input type="checkbox" name="hobby" id="socc" value='soccker'>축구</label><br>
+                <label for= 'stu'><input type="checkbox" name="hobby" id="stu" value='studying' checked>공부</label>
+                <label for= 'music'><input type="checkbox" name="hobby" id="music" value='listningMusic'>음악감상</label><br>
+                <label for= 'etc'><input type="checkbox" name="hobby" id="etc" value='etc'>기타 : <input type="text" name="etc" id="etc">            
+            </p>
 
-            
-
+            자기소개<br>
+            <textarea cols='50' rows='5' style resize='none'></textarea>
         </fieldset>
-
-
+        <br>
+        <input type="submit" value="회원가입">
+        <input type="reset" value="다시입력">
+        <button>이전으로</button>   
     </form>
+    <!--서버에 값 전송될때 name값으로 넘어감-->
 </body>
 </html>

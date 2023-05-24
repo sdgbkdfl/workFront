@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <button onclick='exchange()'>변환하기</button>
+    <div id='area1'></div>
+    <script>
+        function exchange(){
+            var area1 = document.querySelector('#area1');
+
+            console.log(area1);
+
+            area1.innerHTML(${#area}cm는 ${}inch입니다.)
+
+        }
+    </script>
+</body>
+</html>

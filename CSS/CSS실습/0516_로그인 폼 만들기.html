@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 폼 만들기</title>
+    <style>
+        *{
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        #login_wrap{
+            width: 300px;
+            height: 120px;
+            /* border: 1px solid black; */
+            /* background-color: aquamarine; */
+        }
+        #login_form{
+            height: 80%;
+        }
+        #login_form_input{
+            width: 65%;
+            /* 픽셀로 지정할 경우 부모 요소와 상관없이 설정되나,
+            %로 높이값 부여할 경우 부모 요소 높이 값 없으면 높이 지정안됨 */
+            height: 100%;
+            background-color: blueviolet;
+            float: left;
+        }    
+        #login_form_input>input{
+            height: 50%;
+            width: 100%;
+        }    
+        #login_form_btn{
+            width: 35%;
+            height: 100%;
+            /* background-color: yellow; */
+            float: right;
+            /* text-align: right; */
+        }
+        #login_form_btn> input{
+            width: 100%;
+            height: 100%;
+            border-radius: 5px; /*모서리 둥근선*/
+            background-color: lavender;
+            font-weight: bold;             
+        }
+        #login_wrap{
+            position: relative;
+            width: 300px;
+            height: 120px;
+            top: 50px;
+            left: 10px; 
+            /* background-color: blue; */
+            /* 범위를 벗어나면 숨김 : overflow: hidden; */
+        }
+        #login_link{
+            text-align: center;
+        }
+        #login_link a{
+            text-decoration: none;
+            color: black;
+            font-size: small;
+        }
+    </style>
+</head>
+<body>
+    <h1>로그인 폼 만들기</h1>
+    <div id='login_wrap'>
+        <form id='login_form' action="" method=''>
+            <div id='login_form_input'>
+                <input type="text" name="userId" id="userId"  placeholder='아이디를 입력하세요' >
+                <input type="password" name="userPw" id="userPw"  placeholder='비밀번호를 입력하세요'>
+            </div>
+            <div id='login_form_btn'>
+                <input type="submit" value="로그인">
+            </div>
+        </form>    
+        <div id='login_link'>
+            <a href='#'>회원가입</a>
+            <a href='#'>아이디 찾기</a>
+            <a href='#'>비밀번호 찾기</a>
+        </div>
+ </div>
+</body>
+</html>

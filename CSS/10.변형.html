@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변형</title>
+    <link rel="stylesheet" href="10.변형.css">
+</head>
+<style>
+    .box{
+        width: 100px;
+        height: 100px;
+        background-color: lightblue;
+        /* 트랜지션 대상 너비 높이(속성) */
+        transition-property: width, height ;
+        /* 시간 지정 */
+        transition-duration: 2s, 1s;
+    }
+    .box:hover{
+        width: 200px;
+        height: 120px;
+    }
+    .box1{
+        width: 100px;
+        height: 100px;
+        margin: 30px;
+    }
+    .bg-tr{
+        background-color: yellowgreen;
+        transition: all ease 1s;
+        transition-timing-function: ease-out;
+    }
+    .bg-tr:hover{
+        background-color: rgb(210, 247, 108);
+        border: 3px solid rgb(126, 177, 9);
+    }
+    .border-tr{
+        background-color: yellowgreen;
+        border: 5px solid pink;
+        transition: all ease-in-out 2s; /*2초동안 천천히 바뀜*/
+    }
+    .border-tr:hover{
+        border-radius: 50%;
+    }
+    .rotate{
+        background-color: orange;
+        border: 3px solid yellow;
+        transition: all 1s ease-in ;
+    }
+    .rotate:hover{
+        width: 200px;
+        height: 200px;
+        background-color: tomato;
+        transform: rotate(270deg);
+    }
+    
+</style>
+<body>
+    <h1>트랜지션(transition)</h1>
+
+    <!-- 
+    transition-timing-function
+    ease
+    liner
+    ease-in
+    ease-out
+    ease-in-out -->
+    
+    웹 요소의 스타일 속성이 조금씩 자연스럽게 바뀌도록 하는 역할
+    <div class='box'></div>
+    <div class='box1 bg-tr'></div>
+    <div class='box1 border-tr'></div> 
+
+    <div class='box1 rotate'></div>
+
+
+    <h1>변형</h1>
+    웹요소의 위치, 크기, 각도 변경
+    요소의 위치를 변경시키거나 요소의 속성 변경 가능
+    <h5>마우스 커서 대면 이미지 좌우로 움직이도록 하기</h5>
+
+
+    <h3>좌우로 움직이기</h3>
+    <img class='transTest' id='trans1' src="images/prod1.jpg" alt="">
+
+    <h3>위아래로 움직이기</h3>
+    <img class='transTest' id='trans2' src="images/prod1.jpg" alt="">
+
+    <h3>대각선으로 움직이기</h3>
+    <img class='transTest' id='trans3' src="images/prod1.jpg" alt="">
+
+    <h3>가로로 확대/축소</h3>
+    <img class='transTest' id='trans4' src="images/prod1.jpg" alt="">
+
+    <h3>세로로 확대/축소</h3>
+    <img class='transTest' id='trans5' src="images/prod1.jpg" alt="">
+
+    <h3>전체 확대/축소</h3>
+    <img class='transTest' id='trans6' src="images/prod1.jpg" alt="">
+
+    <h3>지정한 각도만큼 회전</h3>
+    <img class='transTest' id='trans7' src="images/prod1.jpg" alt="">
+    <img class='transTest' id='trans8' src="images/prod1.jpg" alt="">
+    <img class='transTest' id='trans9' src="images/prod1.jpg" alt="">
+    <img class='transTest' id='trans10' src="images/prod1.jpg" alt="">
+
+
+</body>
+</html>

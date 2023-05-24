@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid1</title>
+    <style>
+
+        .wrapper{
+            border: 1px solid black;
+            padding: 10px;
+            display: grid;
+            /* 컬럼의 갯수와 크기 지정
+            px는 고정단위이므로 텍스트가 길어질 경우 짤림 현상 있음 */
+            grid-template-columns: 300px 300px 300px;
+
+            /* repeat : 칸의 갯수, 크기 */
+            grid-template-columns: repeat(3,300px);
+
+            /* fr(fration): 그레드컨테이너의 여유공간을 비율로 나눠 설정 */
+            /* 웹페이지 크기에 따라 요소의 사이즈가 같이 변경! 반응형 웹~~ */
+            grid-template-columns: repeat(3,1fr);
+
+            /* 행의 갯수와 크기 지정 */
+            grid-template-rows: 200px;
+            /* 최대값 최소값 지정 minmax*/
+            /* 행 수 : 2 */
+            grid-template-rows: repeat(2,minmax(100px, auto)) ;
+            
+            /* 줄간격, 컬럼간격 */
+            gap: 10px 20px;
+            row-gap: 20px;
+            column-gap: 20px;
+        }
+        .item{
+            padding: 10px;
+            background-color: bisque;
+        }
+        /* odd는 홀수, even 짝수 */
+        .item:nth-child(2n){
+            background-color: burlywood;
+        }
+    </style>
+</head>
+<body>
+    <h1>그리드 레이아웃1</h1>
+    <div class="wrapper">
+        <div class="item">Tempor labore eiusmod in enim laborum excepteur aliquip esse culpa.</div>
+        <div class="item">Tempor labore eiusmod in enim laborum excepteur aliquip esse culpa. Pariatur voluptate tempor aliqua ullamco duis. Do eiusmod adipisicing laboris dolore ad.</div>
+        <div class="item">Tempor labore eiusmod in enim laborum excepteur aliquip esse culpa. Pariatur voluptate tempor aliqua ullamco duis. Do eiusmod adipisicing laboris dolore ad.</div>
+        <div class="item">Tempor labore eiusmod in enim laborum excepteur aliquip esse culpa.</div>
+        <div class="item">Tempor labore eiusmod in enim laborum excepteur aliquip esse culpa. Pariatur voluptate tempor aliqua ullamco duis. Do eiusmod adipisicing laboris dolore ad.</div>
+    </div>
+</body>
+</html>

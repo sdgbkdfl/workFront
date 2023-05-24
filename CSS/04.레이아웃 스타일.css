@@ -1,0 +1,133 @@
+
+#box1{
+    border: 2px solid red;
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    /* height, line-height를 같은 값으로 설정 
+    세로 가운데 정렬*/
+}
+#box2{
+    border: 2px solid red;
+    width: 50%;
+    /*가변 사이즈 : 웹 페이지 조절함에 따라 가변크기에 따라 사이즈 변경됨 */
+    height: 200px;
+}
+.display{
+    border: 2px solid black;
+}
+.display-inline{
+    display: inline;
+}
+.display-inline-block{
+    display: inline-block;
+}
+
+.area1{
+    background-color: yellow;
+    margin: 20px;
+    padding: 20px;
+
+}
+.area2{
+    background-color: violet;
+    margin: 20px;
+    padding: 20px;
+}
+.border{
+    width: 100px;
+    height: 100px;
+}
+.b1{
+    border-style: none;
+}
+.b2{
+    border-style: hidden;
+}
+.b3{
+    border-style: dotted;
+    border-color: plum;
+    border-top-color: blue;
+    border-left-color: chartreuse;
+    border-bottom-color: tomato;
+
+    border-width: thick, thin;
+    border-width: 10px 5px 2px 1px;
+     /* width 적용 순서 : 상-우-하-좌*/
+    border-width: 10px 20px;
+    /*width 적용 순서 : 상하 좌우*/
+   
+}
+.b4{
+    /*선 스타일*/
+    border-style: dashed;
+    /*선 컬러*/
+    border-color: green;
+    /*radius : 둥근 모서리, 탭 만들때 활용*/
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.b5{
+    border-style: double;
+    /*원모양 만들고 싶으면 radius 50% 부여*/
+    border-radius: 50%;
+    border-width: 20px;
+}
+.b6{
+    border-style: groove;
+    border-width: 10px;
+}
+.b7{
+    border-style: inset;
+}
+.b8{
+    border-style: outset;
+
+}
+.b9{
+    border-style: ridge;
+}
+.b10{
+    border-style: solid;
+}
+.space{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    border: 5px dotted yellowgreen;
+}
+
+.margin1{
+    margin: 50px;
+    /* 마진 중첩현상
+    요소를 세로로 배치할 경우 마진이 큰쪽으로 겹쳐짐*/
+    box-shadow: -5px -5px 10px 10px pink inset;
+       /* shadow
+    수평거리 수직거리 흐림정도 번짐정도 색상 inset(그림자 안으로)
+    흐림, 번짐 정도 : 0~양수값
+    */
+}
+.margin2{
+    margin: 50px 100px;
+
+}
+.margin3{
+    /* 상우하좌*/
+    margin: 30px 50px 80px 100px;
+}
+.padding1{
+    /*상하좌우 모두 10픽셀 적용*/
+    padding: 10px;
+}
+.padding2{
+    padding-top: 10px;
+    padding-right: 100px;
+}
+.padding3{
+    padding: 50px 100px;
+    /*margin속성을 이용해 가운데 정렬
+    요소의 너비가 지정되어 있어야함
+    왼쪽 마진과 오른쪽 마진 속성값을 auto로 지정*/
+    margin: 0px auto;
+    
+}

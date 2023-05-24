@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid 3-1</title>
+    <style>
+        .wrapper{
+            width: 700px;
+            /* border: 1px solid blue; */
+            display: grid;
+            /* 컬럼갯수와 너비 지정 */
+            grid-template-columns: repeat(3,1fr);
+            /* 행의 갯수와 너비 지정 */
+            grid-template-rows: repeat(3,1fr);
+        }
+        .box{
+            /* border: 1px dotted dodgerblue; */
+            padding: 15px;
+            color: #fff;
+            font-weight: bold;
+            text-align: center;
+        }
+        .box1{
+            background-color: skyblue;
+            /* 박스에 네개의 줄 있다고 생각하고..! */
+            grid-column-start: 1;
+            grid-column-end: 4;
+            /* 위의 두줄과 같은 결과 실행 */
+            grid-column: 1/4;
+        }
+        .box2{
+            background-color: yellowgreen;
+            grid-row: 2/4;
+        }
+        .box3{
+            background-color: coral;
+            grid-column-start: 2;
+            grid-column-end: 4;
+        }
+        .box4{
+            background-color: rgb(253, 220, 29);
+            grid-column-start: 3;
+            grid-row-start: 3;
+    
+        }
+    </style>
+</head>
+<body>
+    <h1>그리드 레이아웃3-1</h1>
+    <div class="wrapper">
+        <div class="box box1">box1</div>
+        <div class="box box2">box2</div>
+        <div class="box box3">box3</div>
+        <div class="box box4">box4</div>
+        <div class="box box5">box5</div>
+    </div>
+</body>
+</html>

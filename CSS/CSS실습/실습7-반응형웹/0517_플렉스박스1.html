@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Box</title>
+    <style>
+        .container{
+            width: 700px;
+            background-color: rgb(255, 171, 185);
+            border: 1px solid black;
+            margin-bottom: 30px;
+            /* 플렉스 컨테이너 지정..? */
+            display: flex;
+
+        }
+        .box{
+            padding: 5px 45px;
+            margin: 5px;
+            width: 80px;
+            background-color: black;
+        }
+        p{
+            color: #fff;
+            text-align: center;
+        }
+        /* 요소를 배치하는 방향 */
+        #option1{
+            /* 왼쪽에서 오른쪽으로  */
+            flex-direction: row;
+        }
+        #option2{
+            /* 오른쪽에서 왼쪽으로  */
+            flex-direction: row-reverse;
+        }
+        #option3{
+            /* 위에서 아래로  */
+            flex-direction: column;
+        }
+        #option4{
+            /* 아래에서 위로  */
+            flex-direction: column-reverse;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <h1>BLACKPINK</h1>
+    <div class='container' id='option1'>
+    <!-- (div.box>p{$})*3 -->
+    <div class="box">
+        <p>1</p>
+    </div>
+    <div class="box">
+        <p>2</p>
+    </div>
+    <div class="box">
+        <p>3</p>
+    </div>
+        </div>    
+
+    <div class='container' id='option2'>
+        <!-- (div.box>p{$})*3 -->
+        <div class="box">
+            <p>1</p>
+        </div>
+        <div class="box">
+            <p>2</p>
+        </div>
+        <div class="box">
+            <p>3</p>
+        </div>
+        </div>    
+    <div class='container' id='option3'>
+        <!-- (div.box>p{$})*3 -->
+        <div class="box">
+            <p>1</p>
+        </div>
+        <div class="box">
+            <p>2</p>
+        </div>
+        <div class="box">
+            <p>3</p>
+        </div>
+        </div>    
+    <div class='container' id='option4'>
+        <!-- (div.box>p{$})*3 -->
+        <div class="box">
+            <p>1</p>
+        </div>
+        <div class="box">
+            <p>2</p>
+        </div>
+        <div class="box">
+            <p>3</p>
+        </div>
+        </div>    
+    <div class='container' id='option5'>
+        <!-- (div.box>p{$})*3 -->
+        <div class="box">
+            <p>1</p>
+        </div>
+        <div class="box">
+            <p>2</p>
+        </div>
+        <div class="box">
+            <p>3</p>
+        </div>
+        </div>           
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 실습1</title>
+    <link rel="stylesheet" href="0516_레이아웃_실습.css">
+</head>
+<body> 
+    <div class="wrap">
+        <header>
+            <!--로고영역-->
+            <div class='pageTop'>
+                <div id='logo'>
+                    <img src="images/logo.jpg" alt="로고">
+                </div>
+                <div id='title'>
+                    <img src='images/mainlogo.jpg' alt='타이틀'>
+                </div>
+            </div>
+            <!--메뉴영역-->
+            <nav>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Profile</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+            <aside id='leftSide'>
+                <img src='images/left_img.jpg' alt='왼이미지'>
+            </aside>
+            <div id='mainContents'>
+                <table>
+                    <tr>
+                        <td><img src="images/main_img1.jpg" alt="이미지1">나무를 심는 사람들</td>
+                        <td><img src="images/main_img2.jpg" alt="이미지2">아이들에게 녹색미래를...</td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/main_img3.jpg" alt="이미지3">설악산을 살리는 길</td>
+                        <td><img src="images/main_img4.jpg" alt="이미지4">사라지는 북극곰들</td>
+                    </tr>
+              
+                </table>
+            </div>
+            <aside id='rightSide'>
+            <!--로그인 영역-->    
+            <div id='login_wrap'>
+                <form id='login_form' action="" method=''>
+                    <div id='login_form_input'>
+                        <input type="text" name="userId" id="userId"  placeholder='아이디를 입력하세요' >
+                        <input type="password" name="userPw" id="userPw"  placeholder='비밀번호를 입력하세요'>
+                    </div>
+                    <div id='login_form_btn'>
+                        <input type="submit" value="로그인">
+                    </div>
+                </form>    
+                <div id='login_link'>
+                    <a href='#'>회원가입</a>
+                    <a href='#'>아이디 찾기</a>
+                    <a href='#'>비밀번호 찾기</a>
+                </div>
+         </div>
+         <div class='rightBottom'>
+         <img src='images/right_img.jpg' alt='오이미지'>
+         <img src='images/me_chat.jpg' alt=''></div>
+            </aside>
+        </main> 
+        <!-- footer영역 -->
+        <footer>
+            <img src="images/footer.jpg" alt="">
+        </footer>
+    </div>
+</body>
+</html>

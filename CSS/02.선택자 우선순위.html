@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자 우선 순위</title>
+    <style>
+    /*구글폰트*/   
+    @import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap');
+  
+
+        h1{
+            color: cadetblue;
+           
+            
+        }
+        h1{
+            color: aliceblue;
+            background-color: brown;
+        }
+        #test1{
+            background-color: rgb(68, 252, 197);
+        }
+        .pinkBg{
+            background-color: pink;
+        }
+        p{
+            /* background-color: tomato !important;
+            color: aliceblue !important; */
+            font-size: 1.5em;
+            font-family: 'East Sea Dokdo', cursive;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 class='pinkBg'>선택자 우선 순위</h1>
+
+    <P>
+        기본적으로 위에서 아래로 적용(아래있는 요소가 최종 적용)<br>
+        같은 요소에 다양한 선택자로 CSS속성이 설정된 경우<br>
+        우선순위에 따라 적용<br>
+        [태그선택자< 클래스 선택자< 아이디 선택자< 인라인선택자 < !important]
+    </P>
+
+    <div id='test1' class='pinkBg'>우선순위 테스트1</div>
+    <p id='test2'>우선순위테스트2</p>
+</body>
+</html>

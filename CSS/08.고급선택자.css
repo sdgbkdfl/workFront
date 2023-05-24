@@ -1,0 +1,52 @@
+
+/*후손 선택자*/
+section h1{
+    /*h1이 여러개니까 섹션에 있는 h1만 적용해주기위해 section h1으로 작성*/
+    background-color: black;
+    color: bisque;
+}
+/*자식 선택자*/
+section > p{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+/*인접선택자*/
+#div_test + div{
+    background-color: yellow;
+}
+/* #div_test ~ div{
+    font-weight: 700;
+    color: tomato;
+} */
+section p + p{
+    background-color: aqua;
+}
+#room + p{
+    color: blueviolet;
+}
+/*속성 선택자*/
+/*id속성을 가진 요소 선택*/
+.div-class[id]{
+    border: 1px solid palevioletred;
+}
+/*div중에 name속성값이 name1과 일치하는 태그*/
+.div-class[id=name1]{
+    background-color: cadetblue;
+}
+/*class속성의 값이 div로 시작되는*/
+.div-class[class^=div]{
+    font-style: italic;
+}
+/*id속성의 값이 name을 포함하는 */
+.class-div[id*=name]{
+    background-color: brown;
+}
+/*class속성의 값이 class로 끝나는*/
+div[class$=class]{
+    padding: 20px;
+}
+class속성값에 p20이 포함되어 있는 경우
+/* (속성값이 띄어 쓰기로 구분) */
+div[class~=p40]{
+    padding: 40px;
+}

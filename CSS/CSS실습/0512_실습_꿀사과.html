@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>꿀사과</title>
+</head>  
+  <style>
+*{
+    margin: 0%;
+    /* 모든 요소의 마진 제거 */
+}
+.imgBg{
+    /* 박스의 크기를 지정해주어야만 영역이 생기고 이미지 볼 수 있음 */
+    /* border: 1px solid red; */
+    width: 600px;
+    height: 430px;
+    background-image: url(../images/apple-bg.jpg);
+    background-size: cover;
+    position: relative;
+}
+.imgContent{
+    /* border: 1px solid blue; */
+    width: 100%; /*상위 요소와 같은 값 부여*/
+    height: 170px;
+    position: absolute; /*가장 가까운 relative 속성을 찾아 그 요소를 기준으로 배치  */
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+h1{
+    /*기본 속성으로 마진有*/
+    /* border: 1px solid yellow; */
+    color: #fff;
+    font-size: 2.0em;
+    height: 60px;
+    margin: 0% auto; /*h1요소 상단에 위치하려면 마진 제거 필요*/
+    line-height: 60px; /*height과 같은 값 주면 세로 가운데 정렬*/
+    padding-left: 59px;
+}
+p{
+    /* border: 1px solid pink; */
+    margin: 0%;
+    height: 110px;
+    /*padding으로 위치 잡아줌*/
+    padding-top: 30px;
+    padding-left: 37.5px;
+    font-size: 1.1em;
+    color: rgb(223, 165, 59);
+    font-weight: 550;
+}
+    </style>
+<body>
+    <div class='imgBg'>
+        <div class='imgContent'>
+            <h1>가정용 꿀사과</h1>
+            <p>흠집이 있고 약간은 못생겼지만 맛과 영양은 그대로입니다.<br>
+            질좋은 사과를 저렴하게 즐겨보세요</p>
+        </div>
+    </div>
+</body>
+</html>

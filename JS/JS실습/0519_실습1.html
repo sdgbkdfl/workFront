@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개요 실습 문제</title>
+    <style>
+        .div-test {
+            border: 1px solid;
+            width: 100px;
+            height: 100px;
+            background-color: black;
+        }
+
+        #area {
+            border: 1px solid;
+            width: 300px;
+            height: 200px;
+            margin-top: 5px;
+        }
+
+        td {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>개요 실습 문제</h1>
+
+    <hr>
+
+    <h2>문제 1. 색상 조절하기</h2>
+
+    <p>
+        색상 선택 후 변경 버튼을 클릭하면 색상이 변경되도록 만들기
+    </p>
+    <div id="div1" class="div-test"></div>
+    <input id="selectColor" type="color">
+    <button onclick="changeColor();">변경</button>
+
+    <script>
+        function changeColor(){
+            // div를 선택하여 변수에 담아줌( #은 아이디 선택자)
+            var div1 = document.querySelector('#div1');
+            var selectColor = document.querySelector('#selectColor');
+
+            //출력
+            console.log(div1);
+            console.log(selectColor);
+            // div1.strle 참조가 안되는 이유 : 엘리먼트의 Inline CSS
+            // div1.strle.backgroundColor
+            //getcomputedStyle(document.querySelector('#div1')).backgroundColor
+
+            // selectColor의 색상값을 변수에 저장
+            var color = selectColor.value;
+            var boxColor = getComputedStyle(div1).backgroundColor;
+
+            console.log(color);
+            // 16진수 숫자를  rgb로 변경 
+            var r= color.substr(1,2);
+            var g= color.substr(3,2); 
+            var b= color.substr(5,2);
+            var rgbColor =` rgb(${r}, ${g}, ${b})`;
+            console.log(rgbColor)
+            console.log(boxColor);
+            
+            // 1. 선택된 색상과 박스의 색상이 같다면 메세지 처리
+            if(rgbColor ==boxColor){
+                alert('같은 색상입니다.')
+            }else{
+                 // 박스의 배경 색상을 변경
+                div1.style.backgroundColor = color;
+                selectColor.style.backgroundColor = 'selectColor'
+
+            }
+            // 2. 박스의 크기를 200*200으로 변경
+            div1.style.width='200px';
+            div1.style.height='200px';
+         
+
+        }
+    </script>
+    
+    
+    <hr>
+    
+    <h2>문제 2. 크기 변경하기</h2>
+    <p>
+        버튼에 따라 크기 조절이 가능하도록 만들기
+    </p>
+    <div id="div2" class="div-test"></div>
+    <button onclick="setSize('1');">50X50</button>
+    <button onclick="setSize('2');">원본(100X100)</button>
+    <button onclick="setSize('3');">200X200</button>
+
+    <script>
+        function setSize(id){
+            var div2 = document.querySelector('#div2');
+
+            if(id =='1'){
+                console.log(id);
+                div2.style.width='50px';
+                div2.style.height='50px';
+            // 타입까지 일치하는지 확인하려면 =을 세개 ===
+            }else if(id==2){
+                console.log(id);
+                div2.style.width='100px';
+                div2.style.height='100px';
+            }else if(id==3){
+                console.log(id);
+                div2.style.width='200px';
+                div2.style.height='200px';    
+            }
+        }
+    </script>
+
+    <hr>
+
+    <h2>문제 3. HTML 태그에 접근</h2>
+    <p>
+        텍스트 박스로 입력받은 데이터를 가져와서 출력하기 <br>
+        (단, 구매자는 태그이름, 상품명은 아이디, 구매 가격은 name값으로 접근)
+    </p>
+
+    <label>구매자 : <input type="text" placeholder="구매자의 이름을 입력하세요."></label> 
+
+    <br><br>
+
+    <label>상품명 : <input type="text" id="pName" placeholder="구매 상품명을 입력하세요."></label>
+
+    <br><br>
+
+    <label>가격 : <input type="text" name="price" placeholder="구매 가격을 입력하세요."></label>
+
+    <br><br>
+
+    <button onclick="printValue();">입력값 출력하기</button>
+
+    <div id="area"></div>
+
+    <script>
+        function printValue(){
+            // 박스선택
+            var area = document.querySelector('#area');
+
+            var customer = document.getElementsByTagName('input')[1].value;
+            // input값으로 찾으려 하면 페이지 내 전체를 찾아야해서 안나옴
+            // 그래서 배열로 값 찾아야함.
+            var productName = document.querySelector('#pName').value;
+            var price = document.getElementsByName('price')[0].value;
+
+            console.log(customer);
+            console.log(productName);
+            console.log(price);
+            
+            console.log(`${customer}, ${productName}, ${price}`);
+            area.innerHTML = `${customer}님 ${productName}은/는 ${price}입니다.`;
+
+        }
+    </script>
+
+    
+
+    <hr>
+
+    <h2>문제 4. 테이블 만들기</h2>
+    어려우니까 PASS!
+    <p>
+        prompt()로 사용자로부터 행과 열의 개수를 입력받아 테이블 만들기 <br>
+        아래의 div 태그에 innerHTML 속성을 사용해서 만들어진 테이블 포함한다.
+    </p>
+
+    <button onclick="makeTable();">테이블 생성</button>
+
+    <div id="div3" style="margin-top: 10px;"></div>
+
+    <script>
+        //함수생성
+        //사용자 입력
+        //행의갯수, 열의 갯수
+        //콘솔창에 출력
+
+        function makeTable(){
+
+            var col = prompt('테이블의 열의 갯수?');
+            var row = prompt('테이블의 행의 갯수?');
+
+            var table='<table border="1px">';
+                for(var j=0; j<row;j++){
+                    table += '<tr>';
+                    //행 반복
+                    for(var i=0;i<col;i++){
+                    table += `<td>${j}-${i}`;
+                    table += '</td>';
+                    }
+                }
+                 table += '</table>';
+                 document.querySelector('#div3').innerHTML = table;
+                // id가 "div3"인 요소를 선택한 후, 
+                // 해당 요소의 내부 HTML 콘텐츠를 변수 table로 변경하는 코드입니다. 
+                // table은 여기서 변수로 가정되며, 
+                // 해당 변수에는 새로운 HTML 테이블을 나타내는 코드 
+                // 또는 문자열이 저장되어야 합니다.                  
+        }
+
+       
+    </script>
+    
+
+
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+</body>
+</html>
