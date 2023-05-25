@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>연습문제 1</title>  
+  <style>
+    #container {
+      width: 600px;
+      margin: 20px auto;
+    }
+    h1 {
+      font-size:1.5rem;
+      text-align:center;
+      margin-bottom:20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>마우스 오버하면 이미지 바꾸기</h1>
+    <img src="images/pic-1.jpg" alt="">
+  </div>
+
+
+
+
+   <!-- 어떨때 addEventListener를 사용하고
+   querySelector를 사용하는지...? onclick이랑 
+   처음에 선언하는 부분 모르겠음
+   function 사용하는거랑 안하는거.. -->
+
+  <script>
+    //선생님이 시작한거
+    // let img = document.querySelector('#container>img');
+
+    //내가 해본거
+    // container.addEventListener('onmouseover',(e)=>{
+    //   ONMOUSEOVER="this.src='images/pic-6'"
+    // });
+
+    window.onload = function(){
+      let img = document.querySelector('#container > img');
+
+      // mouseover : 마우스가 요소위에 올라왔을때
+      img.addEventListener('mouseover',function(){
+        // img태그의 src속성을 변경
+        // 요소.속성명
+        img.src='images/pic-6.jpg';
+      });
+
+      // mouseout : 마우스가 요소에서 나갔을때
+      img.addEventListener('mouseout',function(){
+        img.src='images/pic-1.jpg';
+      });
+    } 
+  </script>
+</body>
+</html>
