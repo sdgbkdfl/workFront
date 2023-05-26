@@ -50,7 +50,7 @@ window.onload = () => {
         
         // 객체선언
         let dog = {
-            name : '백구'
+            name : '둥이'
             , kind : '진돗개'
             // 객체의 메소드 
             , eat : function(food){
@@ -59,7 +59,7 @@ window.onload = () => {
             }
         }
 
-        dog.eat('닭가슴살');
+        dog.eat('고구마');
 
     });
 
@@ -84,9 +84,9 @@ window.onload = () => {
 
         // 객체의 속성 추가 
         // 속성이 이미 존재하는 경우 업데이트 없는경우 추가
-        student.name = '홍길동';
+        student.name = '구준표';
         student.age = 20;
-        student['job'] = '도둑'
+        student['job'] = '재벌'
 
         // 객체에 메서드 추가
         student.whoAreYou = function(){
