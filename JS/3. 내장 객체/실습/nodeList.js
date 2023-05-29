@@ -8,21 +8,6 @@ window.onload =function(){
     // // 연결 (자식 요소로 등록)
     // // 부모 요소 선택
     // // 삽입하고 싶은 위치의 노드선택
-
-
-    // })
-
-
-    // let body = document.createElement('body')
-
-    // let p1 = document.createElement('p1');
-    // p1.textContent = 'java';
-    
-    // let p2 = document.createElement('p2');
-    // p1.textContent = 'Oracle';
- 
-    // body.appendChild(p1);
-    // body.appendChild(p2);
  //--------------------------------------------------------------
 //  선생님 하신 것
   /*
@@ -68,48 +53,40 @@ window.onload =function(){
 // 응용문제------------------------------------------------------
 // 페이지가 모두 불러들여져오면 바로 실행
 // 위치 찾아다가 삽입
-    items = document.querySelector('#items');
-    li = document.querySelector('li');
+    // items = document.querySelector('#items');
+    // li = document.querySelector('li');
 
-    let javaNode = document.querySelector('li');
-    let javaText = document.createTextNode("java");
+    // let javaNode = document.querySelector('li');
+    // let javaText = document.createTextNode("java");
 
-    javaNode.appendChild(javaText);
+    // javaNode.appendChild(javaText);
 
-    items.insertBefore(javaNode, li)
+    // items.insertBefore(javaNode, li)
     // 왜 안되지/...?
 //--------------------------------------------------------------
 // 선생님 하신것
-items = document.querySelector('#items');
-li = document.querySelector('li');
+// items = document.querySelector('#items');
+// li = document.querySelector('li');
 
-let javaNode = document.createElement('li');
-let javaTextNode = document.createTextNode('Java');
-javaNode.appendChild(javaTextNode);
-items.insertBefore(javaNode, li);
+// let javaNode = document.createElement('li');
+// let javaTextNode = document.createTextNode('Java');
+// javaNode.appendChild(javaTextNode);
+// items 요소내에서 li요소앞에 javaNode 요소 추가
+// items.insertBefore(javaNode, li);
 
-let oracleNode = document.createElement('li');
-let oracleTextNode = document.createTextNode('Oracle');
-oracleNode.appendChild(oracleTextNode);
-items.insertBefore(oracleNode, li);
+// let oracleNode = document.createElement('li');
+// let oracleTextNode = document.createTextNode('Oracle');
+// oracleNode.appendChild(oracleTextNode);
+// items.insertBefore(oracleNode, li);
 
-let jspNode = document.createElement('li');
-let jspTextNode = document.createTextNode('Jsp/Servlet');
-jspNode.appendChild(jspTextNode);
-items.appendChild(jspNode, li);
+// let jspNode = document.createElement('li');
+// let jspTextNode = document.createTextNode('Jsp/Servlet');
+// jspNode.appendChild(jspTextNode);
+// items.appendChild(jspNode, li);
 
-let springNode = document.createElement('li');
-let springTextNode = document.createTextNode('Spring');
-springNode.appendChild(springTextNode);
-items.appendChild(springNode, li);
-
-
-
-
-
-
-
-
-
+// let springNode = document.createElement('li');
+// let springTextNode = document.createTextNode('Spring');
+// springNode.appendChild(springTextNode);
+// items.appendChild(springNode, li);
 
 }
