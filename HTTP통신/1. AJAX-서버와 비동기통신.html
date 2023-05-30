@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON</title>
+  <link rel="stylesheet" href="css/student.css">
+</head>
+<body>
+  <div id="result"></div>
+  <script>
+    //객체 생성
+    // http통신을 이용하여 서버로 부터 데이터를 수신
+    let xhr = new XMLHttpRequest();
+    // 방식, 자료위치, 비동기 여부(기본: 비동기)
+    xhr.open('get','json/student.json');
+     // 서버에 자료를 요청
+    xhr.send();
+
+    /*
+      xhr.status 상태값 (속성) : 상태값 바뀔때마다 이벤트 호출
+      XMLHttpRequest 객체의 현재 상태를 나타냅니다.
+          0. UNSENT : XMLHttpRequest 객체가 생성됨.
+          1. OPENED : open() 메소드가 성공적으로 실행됨.(서버에 요청)
+          2. HEADERS_RECEIVED : 요청에 대한 응답으로 Header가 도착함.
+          3. LOADING (숫자 3) : 요청한 데이터를 처리 중임.
+          4. DONE (숫자 4) : 요청한 데이터의 처리가 완료되어 응답할 준비가 완료됨.
+    */
+
+    // onreadystatechange는 함수
+    xhr.onreadystatechange = function(){
+      let resDiv = document.querySelector('#result');
+
+      // xhr객체가 기지고 있는 속성, 속성값 출력
+      // resDiv.innerHTML += '======================================<br>';
+      // for(xhrAttr in xhr){
+      //  resDiv.innerHTML +=  `${xhrAttr} : ${xtr[xhrAttr]}<br>`;
+      // }
+
+      /*
+      😜xhr.status
+          서버의 문서 상태
+      200 : 서버에 문서가 존재함
+      404 : 서버에 문서 존재하지 않음
+      */
+     console.log(xhr.readyState); //자신의 통신결과
+     console.log(xhr.status); // 서버로부터 받은 응답의 HTTP 상태 코드
+    //  xhr.status : HTTP 상태 코드는 요청이 성공했는지, 실패했는지, 
+    //  어떤 종류의 오류가 발생했는지 등을 나타내는 숫자
+
+      if(xhr.readyState === 4 && xhr.status == 200){
+          // 응답문자열(json 형식의 문자열)
+          console.log(xhr.responseText);
+
+          //jsObj로 변환
+          let student = JSON.parse(xhr.responseText);
+   
+          //화면 출력
+          resDiv.innerHTML = `
+          <h1>${student.name}</h1>
+            <ul>
+              <li>전공 : ${student.name}</li>
+              <li>학년 : ${student.major}</li>            
+            </ul> 
+            `     
+      }
+    
+    }
+        // let jsonStr = `{
+        //     "name" : "금잔디",
+        //     "major" : "컴퓨터공학",
+        //     "grade" : 2
+        // }`;
+
+  </script>
+
+</body>
+</html>

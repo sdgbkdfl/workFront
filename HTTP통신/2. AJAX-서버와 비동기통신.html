@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON</title>
+  <link rel="stylesheet" href="css/student.css">
+  <script src='json/student-2.json'></script>
+</head>
+<body>
+  <div id="container">
+    <h1>수강생 명단</h1>
+
+    <div id="result"></div>
+  </div>
+  <script>
+    /* 
+    XMLHttpRequest : 클라이언트와 서버 간의 비동기 통신을
+    위해 사용되는 JavaScript의 내장 객체
+    */
+   //XMLHttpRequest 객체를 생성, 서버와의 비동기 통신
+    let xhr = new XMLHttpRequest();
+    
+    // 요청을 설정
+    // get : HTTP 요청의 메서드를 지정하는 매개변수
+    
+    xhr.open('get','json/student-2.json');
+
+    xhr.send();
+    // status값이 변경될 때마다 이벤트 실행
+    xhr.onreadystatechange = function(){
+
+      ///통신이 잘됐다면 실행
+      if(xhr.readyState === 4 && xhr.status == 200){
+          let res = xhr.responseText;
+         
+          //jsObj로 변환 
+          let resObj = JSON.parse(res);
+
+          let resDiv = document.querySelector('#result');
+         
+        for(obj of resObj){ 
+          //화면 출력
+           resDiv.innerHTML += `
+          <h1>${obj.name}</h1>
+            <ul>
+              <li>${obj.major}</li>
+              <li>${obj.grade}</li>             
+            </ul> 
+            `     
+        }    
+    }
+  }
+
+  </script>
+
+</body>
+</html>
