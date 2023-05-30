@@ -24,7 +24,7 @@ let btn1 = document.getElementById('btn1');
          console.log('array2', array2);
          console.log('array3', array3);
          console.log('array4', array4);
- 
+
          // 여러가지 타입을 입력
          let array5 = [
              '고경희'            // 문자
