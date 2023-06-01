@@ -11,7 +11,7 @@
   // 문자열을 배열로 - split()
   {
     const fruits = '🍎, 🥝, 🍌, 🍒';
-    const result = fruits.split(',', 2);
+    const result = fruits.split(',', 2)
     console.log(result);
   }
   
@@ -65,27 +65,55 @@
     
   }
   
-  
+
   // Q7. make an array containing only the students' scores
   // result should be: [45, 80, 90, 66, 88]
   // map
   {
+    const result = students.map((student) => student.score);
+    console.log(result);
   }
   
   // Q8. check if there is a student with the score lower than 50
+  // some : returns true for any element of an array
+  // every : all the members of an array satisfy the specified test.
   {
+    const result = students.some((student) => student.score < 50);
+    console.log(result);
   }
   
   // Q9. compute students' average score
+  // reduce : accumulated result 배열 돌면서 값을 누적
   {
+    // const result = students.reduce((prev, curr)=>{
+    //   console.log('--------');
+    //   console.log(prev);
+    //   console.log(curr);
+    //   return prev + curr.score;
+    // }, 0);
+    // console.log(result);
+    // 코드 간단하게!
+    const result = students.reduce((prev, curr)=>prev + curr.score, 0);
+    console.log(result/students.length);
   }
   
   // Q10. make a string containing all the scores
   // result should be: '45, 80, 90, 66, 88'
+  // 점수들 나열한 배열 생성 - map
+  // 배열을 스트링으로 - join
   {
+    const result = students.map((student) => student.score).join();
+    console.log(result);
   }
   
   // Bonus! do Q10 sorted in ascending order
   // result should be: '45, 66, 80, 88, 90'
+  // sort : Sorts an array in place.
+
   {
+    const result = students
+      .map((student) => student.score)
+      .sort((a, b) => b - a)
+      .join();
+    console.log(result);
   }

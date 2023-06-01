@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEST</title>
+    <script src='TEST.js'></script>
+</head>
+<style>
+    form{
+        /* border: 1px solid black; */
+        width: 600px;
+        height: 800px;
+        padding: 20px;
+
+    }
+    #introduction{
+        border: 1px solid black;
+        width: 300px;
+        height: 250px;
+
+    }
+    #submitBox{
+        /* border: 1px solid black; */
+      
+    }
+</style>
+<body>
+    <p><button id='btnStart'>시간</button></p>
+    <p><button id='btn'>testJson함수</button></p>
+    <h1>회원가입 폼</h1>
+    <form id="signupForm" action="회원가입 처리 페이지 URL" method="post" onsubmit="validateForm(); return false" >
+      <div>
+        <p><label for="id">ID</label>
+        <input type="text" id="id" name="id" required>
+        <button type="button" id="checkDuplicate">ID중복검사</button></p>
+      </div>
+      <div>
+        <p><label for="password">비밀번호</label>
+        <input type="password" id="password" name="password" required></p>
+      </div>
+      <div>
+        <p><label for="name">성명</label>
+        <input type="text" id="name" name="name" required></p>
+      </div>
+      <div>
+        <p>
+        <label for="email">E-Mail</label>
+        <input type="email" id="email" name="email" required>
+        <select name='emailAddr' id='emailAddr'>
+            <option value='self'>직접입력</option>
+            <option value='@naver.com'>@naver.com</option>
+            <option value='@daum.net'>@daum.net</option>
+        </select>    
+        </p>
+      </div>
+      <div>
+        <label for="phone">핸드폰:</label>
+        <select id="phonePrefix" name="phonePrefix" required>
+          <option value="">선택</option>
+          <option value="010">010</option>
+        </select>
+        <input type="text" id="phone" name="phone" required>
+      </div>
+      <div><p>
+        <label>성별:</label>
+        <input type="radio" id="male" name="gender" value="남자" required>
+        <label for="male">남자</label>
+        <input type="radio" id="female" name="gender" value="여자" required>
+        <label for="female">여자</label>
+    </p></div>
+      <div id='hobbySelect'><p>
+        <label>취미:</label>
+        <input type="checkbox" id="study" name="hobby" value="공부" required>
+        <label for="study">공부</label>
+        <input type="checkbox" id="hiking" name="hobby" value="등산"required>
+        <label for="game">게임</label>
+        <input type="checkbox" id="fishing" name="hobby" value="낚시" required>
+        <label for="fishing">낚시</label>
+        <input type="checkbox" id="shopping" name="hobby" value="쇼핑" required>
+        <label for="shopping">쇼핑</label>
+    </p></div>
+     <p> <div id='introductionbox'>
+        <label for="introduction">자기소개:</label><br><br>
+        <textarea id="introduction" name="introduction" maxlength="100" placeholder='100자 이내로 작성하세요' required></textarea>
+      </div></p>
+      <div id='submitBox'>
+        <button type="submit" id='signupButton'>회원가입</button>
+        <button type="button" onclick="resetForm()" id='resetForm'>취소</button>
+      </div>
+    </form>  
+    
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공공데이터활용</title>
+    <script src='5. AJAX-공공데이터활용.js'></script>
+    <style>
+         *{list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <form id='campForm'>
+        <table>
+            <tr>
+                <td>MobileOS</td>
+                <td><input type="text" name="MobileOS" id="" value='ETC'></td>
+                <td>서비스명(어플명)</td> 
+            </tr>
+            <tr>
+               <td>MobileApp</td>
+               <td><input type="text" name="MobileApp" id="" value='AppTest'></td>
+               <td>인증키(서비스키)</td>   
+            </tr>
+            <tr>
+               <td>serviceKey</td>
+               <td><input type="text" name="serviceKey" id="" value='G%2FD1zMqvFZ2G%2Fgn8ZmBi48azzdWxej2GyKLt%2BEuKdT0U2VBQolfKpnpbw5f%2FJZ3clfMxEEkqaUvrfvHZcbTGwA%3D%3D'></td>
+               <td>한페이지결과수</td>   
+            </tr>
+            <tr>
+               <td>mapX</td>
+               <td><input type="text" name="mapX" id="" value='128.6142847'></td>
+               <td>경도 : GPS X좌표(WGS84 경도 좌표)</td>   
+            </tr>
+            <tr>
+               <td>mapY</td>
+               <td><input type="text" name="mapY" id="" value='36.0345423'></td>
+               <td>위도 : GPS Y좌표(WGS84 위도 좌표)</td>   
+            </tr>
+            <tr>
+               <td></td>
+               <td></td>
+               <td></td>   
+            </tr>
+            <tr>
+               <td>_type</td>
+               <td><input type="text" name="_type" id="" value='json'></td>
+               <td></td>   
+            </tr>
+            <tr>
+               <td>numOfRows</td>
+               <td><input type="text" name="numOfRows" id="" value="100"></td>
+               <td>OS 구분 : IOS (아이폰), AND (안드로이드), WIN (윈도우폰), ETC(기타)</td>   
+            </tr>
+            <tr>
+               <td>radius</td>
+               <td><input type="text" name="radius" id="" value="20000"></td>
+               <td>거리 반경 : 거리 반경(단위:m) ,Max값 20000m=20Km</td>   
+            </tr>
+        </table>    
+      
+        <p><button id='btnCampInfo'>캠핑장 정보 조회</button></p>
+    </form>
+    <div id='result'></div>
+</body>
+</html>

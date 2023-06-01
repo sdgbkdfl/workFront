@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공공데이터활용</title>
+    <script src='kakaoMap_CurrentMarker.js'></script>
+    <style>
+         *{
+            list-style: none;
+         } 
+    </style>
+</head>
+<body>
+    
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=516d07118e4a29760c81900d8010bb55"></script>
+
+    <form id='campForm'>
+        numOfRows <input type="text" name="numOfRows" id="" value='10'>,<br>/ // 페이지 결과 수 
+        pageNo	 <input type="text" name="pageNo" id="" value='1'><br>,
+        MobileOS <input type="text" name="MobileOS" id="" value='ETC'><br>,
+        MobileApp <input type="text" name="MobileApp" id="" value='AppTest'><br>,
+        serviceKey  <input type="text" name="serviceKey" id="" value='G%2FD1zMqvFZ2G%2Fgn8ZmBi48azzdWxej2GyKLt%2BEuKdT0U2VBQolfKpnpbw5f%2FJZ3clfMxEEkqaUvrfvHZcbTGwA%3D%3D'><br>,
+        mapX        <input type="text" name="mapX" id="" value='128.6142847'><br>,
+        mapY        <input type="text" name="mapY" id="" value='36.0345423'><br>
+        radius      <input type="text" name="radius" id="" value='2000'><br>
+        _type       <input type="text" name="_type" id="" value='json'><br>
+        
+
+        <button id='btnCampInfo'>위치확인</button>
+       <div id='result'></div>
+    </form>
+</body>
+</html>
